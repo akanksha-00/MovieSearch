@@ -33,17 +33,18 @@ class SearchPage extends StatelessWidget {
           } else if (state is SuccessState) {
             List<MovieEntity> movieList = context.read<SearchBloc>().movieList;
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => MoviesListPage(
-                    year: year.text, movieList: movieList)));
+                builder: (_) => BlocProvider.value(
+                    value: context.read<SearchBloc>(),
+                    child: MoviesListPage(
+                      year: year.text,
+                      movieList: movieList,
+                    ))));
           }
         },
         builder: (context, state) {
           return Container(
             constraints: BoxConstraints.expand(),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('images/poster.jpg'), fit: BoxFit.cover),
-            ),
+            color: Colors.grey[400],
             height: MediaQuery.of(context).size.height,
             //color: Colors.amber,
             child: Padding(
@@ -69,7 +70,9 @@ class SearchPage extends StatelessWidget {
                         Expanded(
                           child: TextField(
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 19.0,),
+                            style: TextStyle(
+                              fontSize: 19.0,
+                            ),
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
