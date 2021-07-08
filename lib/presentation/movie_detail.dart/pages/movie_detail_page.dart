@@ -11,11 +11,17 @@ class MovieDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(movieEntity.title),
+        centerTitle: true,
+        backgroundColor: Colors.grey[900],
+        elevation: 0.0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-        child: SingleChildScrollView(
-          child: Container(
+      body: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 20.0,
+              horizontal: 16.0,
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,16 +37,26 @@ class MovieDetails extends StatelessWidget {
                     SizedBox(
                       width: 18.0,
                     ),
-                    Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          text(
-                              'Release Date: ${movieEntity.releaseDate}', 18.0),
-                          text('Rating: ${movieEntity.rating}', 18.0),
-                          text('Popularity: ${movieEntity.popularity}', 18.0),
-                        ]),
+                    Container(
+                      color: Colors.grey[400],
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20.0,
+                          horizontal: 10.0,
+                        ),
+                        child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              text('Release Date: ${movieEntity.releaseDate}',
+                                  18.0),
+                              text('Rating: ${movieEntity.rating}', 18.0),
+                              text('Popularity: ${movieEntity.popularity}',
+                                  18.0),
+                            ]),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(
