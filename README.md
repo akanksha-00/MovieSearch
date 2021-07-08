@@ -1,16 +1,12 @@
-# movie_app_internship
+# Movie Search App
 
-A new Flutter project.
+## Features:
+ 1. Search Movie by Year
+ 2. Display List of top 20 movies based on year
+ 3. Display details of each individual movie from the display list
 
-## Getting Started
+## Other Details:
+ 1. Architecture: Bloc
+ 2. API: TBMD API
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
